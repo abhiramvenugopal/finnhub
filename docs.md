@@ -1,39 +1,32 @@
-Basic Financials
-Get company basic financials such as margin, P/E ratio, 52-week high/low etc.
+steps to be followed to excute the program
 
-Method: GET
+1.npm install
+2.npm start
 
-Examples:
+API end points
 
-/stock/metric?symbol=AAPL&metric=all
+REST API for finding symbol for an company. it will accept company name and return an array of symbol details
 
-Arguments:
+http://localhost:8006/api/v1/basic/symbol?name=<company-name>
 
-symbolREQUIRED
-Symbol of the company: AAPL.
+  
+REST API for getting market news it will accept category and return an array of news details
+  
+http://localhost:8006/api/v1/basic/market-news?category=<category>
+  
+  
+REST API for calculating avarage surprise earning. it will accept symbol an return an object contains some avarage surprise earnings
 
-metricREQUIRED
-Metric type. Can be 1 of the following values all
+http://localhost:8006/api/v1/basic/avarage/earningsurprise?symbol=<symbol>&limit=<limit>
+  
+REST API for subscribe for an event in webhook it will accept two parameters 'symbol' and 'type'
+  
+ http://localhost:8006/api/v1/basic/subscribe?type=<type>&symbol=<symbol>
+  
+  type=subscribe or subscribe-news
 
-Response Attributes:
-
-metric
-Map key-value pair of key ratios and metrics.
-
-metricType
-Metric type.
-
-series
-Map key-value pair of time-series ratios.
-
-symbol
-Symbol of the company.
-
-
-
-finnhubClient.companyBasicFinancials("AAPL", "all", (error, data, response) => {
-  console.log(data)
-});
-
-
-
+//REST API for unsubscribe for an event in webhook it will accept two parameters 'symbol' and 'type'
+  
+http://localhost:8006/api/v1/basic/unsubscribe?type=<type>&symbol=<symbol>
+  
+  type=unsubscribe or unsubscribe-news
