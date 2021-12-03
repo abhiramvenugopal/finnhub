@@ -1,0 +1,19 @@
+{
+  "name": "finedata",
+  "version": "1.0.0",
+  "description": "FineData assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index"
+  },
+  "author": "abhiram",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "finnhub": "^1.2.7",
+    "nodemon": "^2.0.15",
+    "ws": "^8.3.0"
+  }
+}
